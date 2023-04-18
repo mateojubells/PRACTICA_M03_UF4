@@ -1,4 +1,6 @@
-    public class Taula {
+package Model;
+
+public class Taula {
         private int numero;
         private int capacidad;
         private boolean ocupada;
