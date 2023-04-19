@@ -1,11 +1,11 @@
 package Model;
 
-public class Taula {
+public class Mesa {
         private int numero;
         private int capacidad;
         private boolean ocupada;
 
-        public Taula(int numero, int capacidad) {
+        public Mesa(int numero, int capacidad) {
             this.numero = numero;
             this.capacidad = capacidad;
             this.ocupada = false;
