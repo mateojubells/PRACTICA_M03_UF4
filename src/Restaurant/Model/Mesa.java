@@ -1,8 +1,8 @@
-package Model;
+package Restaurant.Model;
 
 public class Mesa {
-        private int numero;
-        private int capacidad;
+        private final int numero;
+        private final int capacidad;
         private boolean ocupada;
 
         public Mesa(int numero, int capacidad) {

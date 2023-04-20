@@ -1,17 +1,29 @@
-import Model.*;
-import View.*;
-import Controller.*;
+import Restaurant.Controller.RestaurantController;
+import Restaurant.Model.*;
+import Restaurant.View.RestaurantView;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-        Plato[] platos = new Plato[3];
-        platos[0] = new Plato("Macarrones", "Macarrones con salsa de tomate", 8, 10);
-        platos[1] = new Plato("Pizza margarita", "Pizza con tomate y queso", 10, 20);
+        /** CREATING OBJECTS **/
 
-        System.out.println();
-        for (Plato plato : platos) {
-            System.out.println(plato);
-        }
+        RestaurantView restaurantUI = new RestaurantView();
+
+        RestaurantController restaurantController = new RestaurantController(restaurantUI);
+
+        ArrayList<Mesa> mesas = new ArrayList<>();
+
+
+        /** LOADING DATABASE **/
+
+        mesas = Database.cargarMesas();
+
+        /** START PROGRAM **/
+
+        restaurantController.init();
+
+
     }
 }

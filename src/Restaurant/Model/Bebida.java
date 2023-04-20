@@ -1,4 +1,4 @@
-package Model;
+package Restaurant.Model;
 
 public class Bebida extends Articulo{
     private double centilitros;
