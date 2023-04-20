@@ -2,7 +2,7 @@ package Model;
 
 import java.util.ArrayList;
 
-public class Comanda {
+public class  Comanda {
     private ArrayList<Plato> platos;
     private ArrayList<Bebida> bebidas;
 

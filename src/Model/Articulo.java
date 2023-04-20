@@ -4,9 +4,9 @@ public abstract class Articulo {
 
     protected String nombre;
     protected String descripcion;
-    protected double precio;
+    protected float precio;
 
-    public Articulo(String nombre, String descripcion, double precio) {
+    public Articulo(String nombre, String descripcion, float precio) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
@@ -32,7 +32,7 @@ public abstract class Articulo {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
     }
 }
