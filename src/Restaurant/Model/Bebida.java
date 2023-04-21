@@ -1,9 +1,7 @@
-package Model;
+package Restaurant.Model;
 
 public class Bebida extends Articulo{
     private double centilitros;
-
-
 
     public Bebida(String nombre, String descripcion, double precio, double centilitros) {
         super(nombre, descripcion, precio);

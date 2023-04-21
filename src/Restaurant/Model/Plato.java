@@ -1,4 +1,4 @@
-package Model;
+package Restaurant.Model;
 
 public class Plato extends Articulo {
 
@@ -19,7 +19,7 @@ public class Plato extends Articulo {
 
     @Override
     public String toString() {
-        return "Model.Plato{" +
+        return "Restaurant.Model.Plato{" +
                 "nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", precio=" + precio +

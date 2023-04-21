@@ -1,9 +1,6 @@
 import Model.*;
-import utils.*;
-
-import java.util.Scanner;
-//import View.*;
-//import Controller.*;
+import View.*;
+import Controller.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +8,9 @@ public class Main {
         Plato[] platos = new Plato[17];
         Bebida[] bebidas = new Bebida[5];
 
+        /** CREATING OBJECTS **/
+
+        RestaurantView restaurantUI = new RestaurantView();
 
         System.out.println();
         for (Plato plato : platos) {
@@ -83,5 +83,19 @@ public class Main {
         String nom = Utilities.llegirString("Introduzca el nombre del nuevo plato: ");
         String descripcio = Utilities.llegirString("Introduzca una descirpcion del plato");
         float precio = Utilities.llegirFloat("Introduce el precio del plato",0, 100);
+        RestaurantController restaurantController = new RestaurantController(restaurantUI);
+
+        ArrayList<Mesa> mesas = new ArrayList<>();
+
+
+        /** LOADING DATABASE **/
+
+        mesas = Database.cargarMesas();
+
+        /** START PROGRAM **/
+
+        restaurantController.init();
+
+
     }
 }
