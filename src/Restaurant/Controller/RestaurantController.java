@@ -1,6 +1,8 @@
 package Restaurant.Controller;
 
 import Restaurant.View.RestaurantView;
+import com.sun.tools.javac.Main;
+import utils.Utilities;
 
 public class RestaurantController {
 
@@ -59,6 +61,7 @@ public class RestaurantController {
     public void initMesas() {
         int option = 0;
 
+
         do {
             option = restaurantUI.mesasMenu(); // Reservar, librar, ver, salir
 
@@ -89,14 +92,32 @@ public class RestaurantController {
         do {
             option = restaurantUI.cocinaMenu();
 
-            switch (option) {
+            switch (option){
+                case 1:
+                    Main.
+                    break;
+                case 2:
 
-            }
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
 
         } while (option != 3);
     }
 
     public void salir() {
         restaurantUI.salir();
+    }
+
+    public RestaurantView getRestaurantUI() {
+        return restaurantUI;
+    }
+
+    public void setRestaurantUI(RestaurantView restaurantUI) {
+        this.restaurantUI = restaurantUI;
     }
 }
