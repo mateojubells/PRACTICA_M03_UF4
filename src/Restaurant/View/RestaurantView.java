@@ -52,6 +52,8 @@ public class RestaurantView {
     public static String opcionesCocina = "\n\n\t1) Gestion de Articulos\n\n\t2) Gestion de Comandas\n\n\t3) Atrás";
     public static String adios = "· Adios! Hasta mañana ·";
 
+
+
     public int mainMenu() {
         System.out.println(logo);
         System.out.println(mainOptions);

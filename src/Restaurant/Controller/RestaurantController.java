@@ -1,16 +1,18 @@
 package Restaurant.Controller;
 
+import Restaurant.Principal.Database;
 import Restaurant.View.RestaurantView;
-import com.sun.tools.javac.Main;
-import utils.Utilities;
+import Restaurant.Principal.Main;
+import Restaurant.Principal.Database;
+
 
 public class RestaurantController {
-
-    private RestaurantView restaurantUI;
+        private RestaurantView restaurantUI;
 
     public RestaurantController (RestaurantView restaurantUI) {
         this.restaurantUI = restaurantUI;
     }
+
 
     public void init () {
 
@@ -29,7 +31,7 @@ public class RestaurantController {
                     break;
 
                 case 3:
-                    salir();
+                    restaurantUI.salir();
                     break;
             }
         } while (option != 3);
@@ -51,7 +53,7 @@ public class RestaurantController {
                     break;
 
                 case 3:
-                    salir();
+                    restaurantUI.salir();
                     break;
             }
 
@@ -86,15 +88,16 @@ public class RestaurantController {
         } while (option != 4);
     }
 
-    public void initCocina() {
+    public RestaurantView initCocina() {
         int option = 0;
 
         do {
             option = restaurantUI.cocinaMenu();
 
-            switch (option){
+            switch (option) {
                 case 1:
-                    Main.
+                    FuncionesCocina.GestioArticles(restaurantUI, Database.cargarPrimeros(), Database.cargarSegundos(), Database.cargarPostres(), Database.cargarPostres());
+
                     break;
                 case 2:
 
@@ -106,7 +109,9 @@ public class RestaurantController {
 
                     break;
 
+            }
         } while (option != 3);
+        return restaurantUI;
     }
 
     public void salir() {
