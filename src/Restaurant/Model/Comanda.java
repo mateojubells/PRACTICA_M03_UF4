@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class  Comanda {
     private ArrayList<Plato> platos;
     private ArrayList<Bebida> bebidas;
+    private boolean preparado;
 
     public Comanda() {
         platos = new ArrayList<Plato>();

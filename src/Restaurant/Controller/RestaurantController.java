@@ -96,8 +96,7 @@ public class RestaurantController {
 
             switch (option) {
                 case 1:
-                    FuncionesCocina.GestioArticles(restaurantUI, Database.cargarPrimeros(), Database.cargarSegundos(), Database.cargarPostres(), Database.cargarPostres());
-
+                    FuncionesCocina.GestioArticles(restaurantUI, Database.cargarPrimeros(), Database.cargarSegundos(), Database.cargarPostres(), Database.cargarPostres(), Database.cargarBebida());
                     break;
                 case 2:
 
