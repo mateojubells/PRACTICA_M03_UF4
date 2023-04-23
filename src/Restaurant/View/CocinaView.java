@@ -1,6 +1,7 @@
 package Restaurant.View;
 
 import Restaurant.Controller.ComandaController;
+import Restaurant.Controller.RestaurantController;
 import Restaurant.Model.Bebida;
 import Restaurant.Model.Comanda;
 import Restaurant.Model.EstadoComanda;
@@ -64,7 +65,7 @@ public class CocinaView {
 
 
         }
-    public static void editarPlato(){
+    public static ArrayList<Plato> editarPlato(){
         Plato platoseleccionado = null;
         int numero = 0;
 
@@ -87,7 +88,7 @@ public class CocinaView {
         platoseleccionado = actualizacion;
         Database.cargarCarta().remove(idplato);
         Database.cargarCarta().add(actualizacion);
-
+        return Database.cargarCarta();
     }
     public static void editarBebida(){
         Bebida bebidaSeleccionada = null;

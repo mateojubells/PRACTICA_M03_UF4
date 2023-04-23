@@ -4,6 +4,8 @@ import Restaurant.Model.*;
 import Restaurant.Principal.Database;
 import Restaurant.View.*;
 
+import javax.swing.text.View;
+
 
 public class RestaurantController {
     private RestaurantView restaurantView;
@@ -25,8 +27,6 @@ public class RestaurantController {
         mesaController = new MesaController(mesaView, listaMesas);
         comandaController = new ComandaController(comandaView, listaComandas, menu);
     }
-
-
     public void init () {
 
         int option = 0;

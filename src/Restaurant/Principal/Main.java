@@ -12,7 +12,6 @@ public class Main {
 
 
 
-
         /** CREATING OBJECTS **/
         RestaurantView restaurantUI = new RestaurantView();
 
