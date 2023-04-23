@@ -85,7 +85,7 @@ public class CocinaView {
     public static void modificarComanda(){
         ComandaController.verComandas();
         Utilities.llegirInt("Introduce el id de la comanda que quierese editar?", 1,Database.cargarComandas().size());
-        for ()
+
 
 
 
