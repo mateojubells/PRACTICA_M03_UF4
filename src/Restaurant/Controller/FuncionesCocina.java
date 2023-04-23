@@ -4,7 +4,7 @@ import Restaurant.Model.Bebida;
 import Restaurant.Model.Plato;
 import Restaurant.Principal.Database;
 import Restaurant.View.RestaurantView;
-import utils.Utilities;
+import Restaurant.Utils.Utilities;
 
 import java.util.ArrayList;
 import java.util.Scanner;

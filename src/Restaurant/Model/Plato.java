@@ -4,8 +4,8 @@ public class Plato extends Articulo {
 
     private double gramos;
 
-    public Plato(String nombre, String descripcion, float precio, double gramos) {
-        super(nombre, descripcion, precio);
+    public Plato(int id, String nombre, String descripcion, float precio, double gramos) {
+        super(id, nombre, descripcion, precio);
         this.gramos = gramos;
     }
 

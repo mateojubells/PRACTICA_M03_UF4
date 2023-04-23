@@ -19,8 +19,21 @@ public class Mesa {
             return capacidad;
         }
 
-        public boolean estaOcupada() {
-            return ocupada;
+    public boolean isOcupada() {
+        return ocupada;
+    }
+
+    public void setOcupada(boolean ocupada) {
+        this.ocupada = ocupada;
+    }
+
+    public String estaOcupada() {
+            if (ocupada) {
+                return "OCUPADA";
+            }
+            else {
+                return "LIBRE";
+            }
         }
 
         public void ocupar() {

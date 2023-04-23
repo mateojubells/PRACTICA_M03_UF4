@@ -1,21 +1,21 @@
 package Restaurant.Model;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Menu {
-    private List<Plato> platos;
-    private List<Bebida> bebidas;
+    private ArrayList<Plato> platos;
+    private ArrayList<Bebida> bebidas;
 
-    public Menu(List<Plato> platos, List<Bebida> bebidas) {
+    public Menu(ArrayList<Plato> platos, ArrayList<Bebida> bebidas) {
         this.platos = platos;
         this.bebidas = bebidas;
     }
 
-    public List<Plato> getPlatos() {
+    public ArrayList<Plato> getPlatos() {
         return platos;
     }
 
-    public List<Bebida> getBebidas() {
+    public ArrayList<Bebida> getBebidas() {
         return bebidas;
     }
 
@@ -33,5 +33,17 @@ public class Menu {
 
     public void eliminarBebida(Bebida bebida) {
         bebidas.remove(bebida);
+    }
+
+    public void mostrarPlatos () {
+        for (Plato plato: platos) {
+            System.out.println("Plato #" + plato.getId() + ": \t" + plato.getNombre());
+        }
+    }
+
+    public void mostrarBebidas () {
+        for (Bebida bebida: bebidas) {
+            System.out.println("Bebida #" + bebida.getId() + ": \t" + bebida.getNombre());
+        }
     }
 }

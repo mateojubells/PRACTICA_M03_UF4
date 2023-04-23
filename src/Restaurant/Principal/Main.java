@@ -1,20 +1,14 @@
 package Restaurant.Principal;
 
-import Restaurant.Controller.RestaurantController;
-import Restaurant.Model.Mesa;
-import Restaurant.Model.Plato;
-import Restaurant.View.RestaurantView;
-
-import utils.Utilities;
-
-import java.util.ArrayList;
+import Restaurant.Controller.*;
+import Restaurant.Model.*;
+import Restaurant.View.*;
 
 public class Main {
     public static void main(String[] args) {
 
 
         /** CREATING OBJECTS **/
-
         RestaurantView restaurantUI = new RestaurantView();
 
         RestaurantController restaurantController = new RestaurantController(restaurantUI);
@@ -24,4 +18,8 @@ public class Main {
         restaurantController.init();
 
     }
+
+    public static void creatingObjects () {
+
     }
+}
