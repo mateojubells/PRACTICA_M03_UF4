@@ -1,4 +1,4 @@
-package utils;
+package Restaurant.Utils;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public final class Utilities {
     private static Scanner llegir = new Scanner(System.in);
 
     /**
-     * Constructor privat que NO permet crear objectes de la classe utils.Utilities
+     * Constructor privat que NO permet crear objectes de la classe Restaurant.utils.Utilities
      */
     private Utilities(){};
 
@@ -25,7 +25,7 @@ public final class Utilities {
         boolean correcte  = false;
 
         while(!correcte){
-            System.out.println(missatge);
+            System.out.print(missatge);
             if(llegir.hasNextInt()){
                 numero = llegir.nextInt();
                 if(numero >= minValue && numero <= maxValue) {
@@ -114,5 +114,17 @@ public final class Utilities {
         c = paraula.charAt(0);
 
         return c;
+    }
+
+    public static void enter(int num) {
+        for (int i = 0; i < num; i++) {
+            System.out.println();
+        }
+    }
+
+    public static void spaces(int num) {
+        for (int i = 0; i < num; i++) {
+            System.out.print(" ");
+        }
     }
 }

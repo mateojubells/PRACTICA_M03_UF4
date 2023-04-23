@@ -4,7 +4,19 @@ import Restaurant.Model.*;
 
 import java.util.ArrayList;
 
+import static Restaurant.Model.EstadoComanda.*;
+
 public class Database {
+
+    public static ArrayList<Comanda> cargarComandas () {
+
+        ArrayList<Comanda> comandas = new ArrayList<>();
+        ArrayList<Plato> platos = new ArrayList<>();
+        ArrayList<Bebida> bebidas = new ArrayList<>();
+        comandas.add(new Comanda(1, platos, bebidas, RECIBIDO));
+
+        return comandas;
+    }
 
     public static ArrayList<Mesa> cargarMesas () {
 
@@ -72,8 +84,4 @@ public class Database {
         Bebida.add( new Bebida("Zumo de Piña", "Zumo de piña natural", 2.0f, 250));
         return Bebida;
     }
-
-
-
-
-    }
+}
