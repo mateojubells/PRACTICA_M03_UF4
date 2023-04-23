@@ -2,6 +2,8 @@ package Restaurant.View;
 
 import Restaurant.Controller.ComandaController;
 import Restaurant.Model.Bebida;
+import Restaurant.Model.Comanda;
+import Restaurant.Model.EstadoComanda;
 import Restaurant.Model.Plato;
 import Restaurant.Principal.Database;
 import Restaurant.Utils.Utilities;
@@ -11,7 +13,7 @@ import java.util.Scanner;
 
 public class CocinaView {
 
-    public static void añadirPlato(RestaurantView restaurantUI){
+    public static void añadirPlato( ){
 
         boolean opcionCorrecte = true;
         int opcio = 0;
@@ -49,8 +51,7 @@ public class CocinaView {
                 break;
         }
     }
-
-    public static void añadirBebida(RestaurantView restaurantUI, ArrayList<Bebida> Bebidas){
+    public static void añadirBebida(){
         boolean opcionCorrecte = true;
         int opcio = 0;
         String nombre = Utilities.llegirString("Introduzca el nombre de la nueva bebida ");
@@ -63,35 +64,94 @@ public class CocinaView {
 
 
         }
-
-    //public static void ver
-
     public static void editarPlato(){
         Plato platoseleccionado = null;
+        int numero = 0;
 
-        for (Plato plato: Database.cargarCarta()){
-            System.out.println(Database.cargarCarta());
-        }
-        int idplato = Utilities.llegirInt("Introduzca el id del plato que quiere editar", 1, Database.cargarCarta().size());
+        System.out.println(Database.cargarCarta());
+
+        int idplato = Utilities.llegirInt("Introduce el id del plato que quieres editar: ", 1, Database.cargarCarta().size());
         for (Plato plato: Database.cargarCarta()){
             if (plato.getId() == idplato){
+                numero = Database.cargarBebida().indexOf(plato);
                 platoseleccionado = plato;
+                System.out.println("\nEl plato a ediar es el siguiente: \n"+platoseleccionado);
                 break;
             }
         }
-
+        String nuevoNombre = Utilities.llegirString("Introduce el nuevo nombre del plato: ");
+        String nuevaDescripcion = Utilities.llegirString("Introduce la descripción del plato ");
+        Float precioNuevo = Utilities.llegirFloat("Introduce el precio del plato: ",0, 2000);
+        Float pesoNuevo = Utilities.llegirFloat("Introduce el precio del plato", 0, 2000);
+        Plato actualizacion = new Plato(idplato, nuevoNombre, nuevaDescripcion, precioNuevo, pesoNuevo);
+        platoseleccionado = actualizacion;
+        Database.cargarCarta().set(numero, platoseleccionado);
     }
+    public static void editarBebida(){
+        Bebida bebidaSeleccionada = null;
+        int numero = 0;
 
+        System.out.println(Database.cargarCarta());
+
+        int idbebida = Utilities.llegirInt("Introduce el id de la bebida que quieres editar: ", 1, Database.cargarCarta().size());
+        for (Bebida bebida: Database.cargarBebida()){
+            if (bebida.getId() == idbebida){
+                numero = Database.cargarBebida().indexOf(bebida);
+                bebidaSeleccionada = bebida;
+                System.out.println("\nLa bebida a editar es la siguiente: \n"+bebidaSeleccionada);
+                break;
+            }
+        }
+        String nuevoNombre = Utilities.llegirString("Introduce el nuevo nombre de la bebida: ");
+        String nuevaDescripcion = Utilities.llegirString("Introduce la descripción de la bebida ");
+        Float precioNuevo = Utilities.llegirFloat("Introduce el precio de la bebida: ",0, 2000);
+        Float pesoNuevo = Utilities.llegirFloat("Introduce el precio de la bebida", 0, 2000);
+        Bebida actualizacion = new Bebida(idbebida, nuevoNombre, nuevaDescripcion, precioNuevo, pesoNuevo);
+        bebidaSeleccionada = actualizacion;
+        Database.cargarBebida().set(numero, bebidaSeleccionada);
+    }
     public static void modificarComanda(){
+        Comanda comandatemporal = null;
+        int numero = 0;
         ComandaController.verComandas();
-        Utilities.llegirInt("Introduce el id de la comanda que quierese editar?", 1,Database.cargarComandas().size());
+        int idComanda = Utilities.llegirInt("Introduce el id de la comanda que quiere editar?", 1,Database.cargarComandas().size());
 
+        for (Comanda comanda : Database.cargarComandas()){
+            if (comanda.getIdComanda() == idComanda){
+                numero = Database.cargarBebida().indexOf(comanda);
+                comandatemporal = comanda;
+            }
+        }
+        System.out.println("L'estat actual de la comanda es: "+ comandatemporal.getPreparado());
 
+        int opcionEstado = Utilities.llegirInt("En que estado quieres mover la comanda?: " +
+                "    1. RECIBIDO,\n" +
+                "    2. PREPARANDO,\n" +
+                "    3. HECHO,\n" +
+                "    4. ENTREGADO,\n" +
+                "    5. CANCELADO", 1, 5);
+        EstadoComanda estado = null;
 
-
-
-    }
-    }
+        switch (opcionEstado){
+            case 1:
+            estado = EstadoComanda.RECIBIDO;
+            break;
+             case 2:
+            estado = EstadoComanda.PREPARANDO;
+            break;
+             case 3:
+            estado = EstadoComanda.HECHO;
+            break;
+             case 4:
+            estado = EstadoComanda.ENTREGADO;
+            break;
+             case 5:
+            estado = EstadoComanda.CANCELADO;
+            break;
+        }
+        Comanda actualizacion = new Comanda(comandatemporal.getIdComanda(), comandatemporal.getPlatos(), comandatemporal.getBebidas(), estado);
+        Database.cargarComandas().set(numero, actualizacion);
+    }}
 
 
 

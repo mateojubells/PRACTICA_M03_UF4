@@ -79,20 +79,20 @@ public class RestaurantController {
 
             switch (option) {
                 case 1:
-                    CocinaController.GestioArticles(restaurantView, Database.cargarPrimeros(), Database.cargarSegundos(), Database.cargarPostres(), Database.cargarPostres(), Database.cargarBebida());
+                    CocinaController.GestioArticles();
                     break;
                 case 2:
-
+                    CocinaController.GestionComandas();
                     break;
-
                 case 3:
-
+                    RestaurantView.mainMenu();
                     break;
 
             }
         } while (option != 3);
         return restaurantView;
     }
+
 
     public void salir() {
         restaurantView.salir();

@@ -71,4 +71,8 @@ public class  Comanda {
         }
         return total;
     }
+
+    public Enum<EstadoComanda> getPreparado() {
+        return preparado;
+    }
 }
