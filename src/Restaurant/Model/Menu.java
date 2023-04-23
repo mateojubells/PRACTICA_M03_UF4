@@ -46,4 +46,26 @@ public class Menu {
             System.out.println("Bebida #" + bebida.getId() + ": \t" + bebida.getNombre());
         }
     }
+
+    public int getMinPlatos() {
+        if (platos.isEmpty()) {
+            return 0;
+        }
+        else return 1;
+    }
+
+    public int getMaxPlatos() {
+        return platos.size();
+    }
+
+    public int getMinBebidas() {
+        if (bebidas.isEmpty()) {
+            return 0;
+        }
+        else return 1;
+    }
+
+    public int getMaxBebidas() {
+        return bebidas.size();
+    }
 }

@@ -1,10 +1,9 @@
 package Restaurant.Controller;
 
-import Restaurant.Model.Bebida;
-import Restaurant.Model.Plato;
+import Restaurant.Model.*;
 import Restaurant.Principal.Database;
 import Restaurant.Utils.Utilities;
-import Restaurant.View.RestaurantView;
+import Restaurant.View.* ;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,6 +12,7 @@ import static Restaurant.View.CocinaView.añadirBebida;
 import static Restaurant.View.CocinaView.añadirPlato;
 
 public class CocinaController {
+
 
     public static void GestioArticles(RestaurantView restaurantUI, ArrayList<Plato> primeros, ArrayList<Plato> segundos, ArrayList<Plato> postres, ArrayList<Plato> carta, ArrayList<Bebida>bebidas){
         int opcio = Utilities.llegirInt(
@@ -40,7 +40,7 @@ public class CocinaController {
                 "\t\n3. Salir", 1,3);
         switch (opcio) {
             case 1:
-                ComandaController.verComandas();
+                // ComandaController.verComandas();
                 break;
             case 2:
                 break;

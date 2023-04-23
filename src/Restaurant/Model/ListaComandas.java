@@ -27,12 +27,23 @@ public class ListaComandas {
         }
     }
 
-    public Comanda añadirComanda(ArrayList<Plato> platos, ArrayList<Bebida> bebidas) {
+    public void añadirComanda(ArrayList<Plato> platos, ArrayList<Bebida> bebidas) {
 
         int id = comandasList.size() + 1;
 
         Enum<EstadoComanda> estado = RECIBIDO;
 
-        return new Comanda(id, platos, bebidas, estado);
+        comandasList.add(new Comanda(id, platos, bebidas, estado));
+    }
+
+    public int getMinComandas () {
+        if (comandasList.size() == 0) {
+            return 0;
+        }
+        else return 1;
+    }
+
+    public int getMaxComandas () {
+        return comandasList.size();
     }
 }
