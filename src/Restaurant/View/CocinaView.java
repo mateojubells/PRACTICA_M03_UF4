@@ -81,17 +81,19 @@ public class CocinaView {
         }
         String nuevoNombre = Utilities.llegirString("Introduce el nuevo nombre del plato: ");
         String nuevaDescripcion = Utilities.llegirString("Introduce la descripción del plato ");
-        Float precioNuevo = Utilities.llegirFloat("Introduce el precio del plato: ",0, 2000);
-        Float pesoNuevo = Utilities.llegirFloat("Introduce el precio del plato", 0, 2000);
+        float precioNuevo = Utilities.llegirFloat("Introduce el precio del plato: ",0, 2000);
+        float pesoNuevo = Utilities.llegirFloat("Introduce el peso del plato", 0, 2000);
         Plato actualizacion = new Plato(idplato, nuevoNombre, nuevaDescripcion, precioNuevo, pesoNuevo);
         platoseleccionado = actualizacion;
-        Database.cargarCarta().set(numero, platoseleccionado);
+        Database.cargarCarta().remove(idplato);
+        Database.cargarCarta().add(actualizacion);
+
     }
     public static void editarBebida(){
         Bebida bebidaSeleccionada = null;
         int numero = 0;
 
-        System.out.println(Database.cargarCarta());
+        System.out.println(Database.cargarBebida());
 
         int idbebida = Utilities.llegirInt("Introduce el id de la bebida que quieres editar: ", 1, Database.cargarCarta().size());
         for (Bebida bebida: Database.cargarBebida()){

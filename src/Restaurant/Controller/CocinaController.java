@@ -22,7 +22,7 @@ public class CocinaController {
                 "\t\t\t\n\n3. Editar plato" +
                 "\t\t\t\n\n4. Editar bebida"+
                 "\t\t\t\n\n5. Atras" +
-                        "\t\t\t\n\nEscoja una opcion: ", 1,4);
+                        "\t\t\t\n\nEscoja una opcion: ", 1,5);
         switch (opcio){
             case 1:
                 añadirPlato();
@@ -31,11 +31,14 @@ public class CocinaController {
                 añadirBebida();
                 break;
             case 3:
+                editarPlato();
+                break;
+            case 4:
                 editarBebida();
-
-
+                break;
+            case 5:
+                RestaurantView.cocinaMenu();
         }
-
     }
 
     public static void GestionComandas(){
