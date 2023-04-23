@@ -9,7 +9,7 @@ public class RestaurantController {
     private RestaurantView restaurantView;
     ListaMesas listaMesas = new ListaMesas(Database.cargarMesas());
 
-    Menu menu = new Menu(Database.cargarCarta(Database.cargarPrimeros(), Database.cargarSegundos(), Database.cargarPostres()), Database.cargarBebida());
+    Menu menu = new Menu(Database.cargarCarta(), Database.cargarBebida());
 
     ListaComandas listaComandas = new ListaComandas(Database.cargarComandas());
 
@@ -79,7 +79,7 @@ public class RestaurantController {
 
             switch (option) {
                 case 1:
-                    FuncionesCocina.GestioArticles(restaurantView, Database.cargarPrimeros(), Database.cargarSegundos(), Database.cargarPostres(), Database.cargarPostres(), Database.cargarBebida());
+                    CocinaController.GestioArticles(restaurantView, Database.cargarPrimeros(), Database.cargarSegundos(), Database.cargarPostres(), Database.cargarPostres(), Database.cargarBebida());
                     break;
                 case 2:
 

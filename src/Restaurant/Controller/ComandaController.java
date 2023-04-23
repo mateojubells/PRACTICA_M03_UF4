@@ -80,7 +80,7 @@ public class ComandaController {
 
     }
 
-    public void verComandas () {
+    public static void verComandas() {
 
     }
 }

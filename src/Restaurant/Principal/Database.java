@@ -65,11 +65,11 @@ public class Database {
         postres.add(new Plato(17, "Coulant de chocolate", "Bizcocho de chocolate relleno de chocolate líquido, servido caliente", 8.25f, 150));
         return postres;
     }
-    public static ArrayList<Plato> cargarCarta (ArrayList<Plato> cargarPrimeros, ArrayList<Plato> cargarSegundos, ArrayList<Plato> cargarPostres){
+    public static ArrayList<Plato> cargarCarta (){
        ArrayList<Plato> carta = new ArrayList<>();
-        carta.addAll(cargarPrimeros);
-        carta.addAll(cargarSegundos);
-        carta.addAll(cargarPostres);
+        carta.addAll(Database.cargarPrimeros());
+        carta.addAll(Database.cargarSegundos());
+        carta.addAll(Database.cargarPostres());
         return carta;
     }
     public static ArrayList<Bebida> cargarBebida () {
