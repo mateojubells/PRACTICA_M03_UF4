@@ -4,6 +4,8 @@ import Restaurant.Model.*;
 import Restaurant.Principal.Database;
 import Restaurant.View.*;
 
+import javax.swing.text.View;
+
 
 public class RestaurantController {
     private RestaurantView restaurantView;
@@ -25,8 +27,6 @@ public class RestaurantController {
         mesaController = new MesaController(mesaView, listaMesas);
         comandaController = new ComandaController(comandaView, listaComandas, menu);
     }
-
-
     public void init () {
 
         int option = 0;
@@ -79,20 +79,20 @@ public class RestaurantController {
 
             switch (option) {
                 case 1:
-                    CocinaController.GestioArticles(restaurantView, Database.cargarPrimeros(), Database.cargarSegundos(), Database.cargarPostres(), Database.cargarPostres(), Database.cargarBebida());
+                    CocinaController.GestioArticles();
                     break;
                 case 2:
-
+                    CocinaController.GestionComandas();
                     break;
-
                 case 3:
-
+                    RestaurantView.mainMenu();
                     break;
 
             }
         } while (option != 3);
         return restaurantView;
     }
+
 
     public void salir() {
         restaurantView.salir();

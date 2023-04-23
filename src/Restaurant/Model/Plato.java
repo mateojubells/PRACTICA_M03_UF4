@@ -19,10 +19,12 @@ public class Plato extends Articulo {
 
     @Override
     public String toString() {
-        return "Restaurant.Model.Plato{" +
-                "nombre='" + nombre + '\'' +
+        return "Plato{" +
+                ", id=" + id +'\'' +
+                "gramos=" + gramos +'\'' +
+                ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", precio=" + precio +
-                '}';
+                "}\n";
     }
 }

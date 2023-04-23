@@ -39,16 +39,12 @@ public class RestaurantView {
 
     public static String opcionesCocina = "\n\n\t1) Gestion de Articulos\n\n\t2) Gestion de Comandas\n\n\t3) Atrás";
     public static String adios = "· Adios! Hasta mañana ·";
-
-
-
-    public int mainMenu() {
+    public static int mainMenu() {
         System.out.println(logo);
         System.out.println(mainOptions);
         Utilities.enter(2);
         return Utilities.llegirInt(askOptions, 1, 3);
     }
-
     /***  METODOS COMEDOR  ***/
     public int comedorMenu() {
         System.out.println(tituloComedor);
@@ -56,16 +52,13 @@ public class RestaurantView {
         Utilities.enter(2);
         return Utilities.llegirInt(askOptions, 1, 3);
     }
-
-
     /***  METODOS COCINA  ***/
-    public int cocinaMenu() {
+    public static int cocinaMenu() {
         System.out.println(tituloCocina);
         System.out.println(opcionesCocina);
         Utilities.enter(2);
         return Utilities.llegirInt(askOptions, 1, 3);
     }
-
     public void salir () {
         System.out.println(adios);
     }

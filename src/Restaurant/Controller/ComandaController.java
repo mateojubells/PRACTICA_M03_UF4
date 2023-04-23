@@ -1,5 +1,6 @@
 package Restaurant.Controller;
 
+import Restaurant.Model.ListaComandas;
 import Restaurant.Model.*;
 import Restaurant.View.ComandaView;
 
@@ -63,31 +64,23 @@ public class ComandaController {
 
         ArrayList<Plato> platos;
         ArrayList<Bebida> bebidas;
-        Enum<EstadoComanda> estado;
 
         comandaView.añadirComanda(listaComandas); // Muestra todas las mesas
 
         platos = comandaView.añadirPlato(menu);
 
-        bebidas = comandaView.añadirBebida(menu);
-
-        listaComandas.añadirComanda(platos, bebidas);
-
-        comandaView.correctaComanda();
+        // FIXME
+        // Mesa option es -1 cuando el usuario quiere tirar atras
+        //if (mesaOption != -1 ) {
+        //    listaMesas.getMesasList().get(mesaOption).setOcupada(true); // Marcamos ocupada la mesa deseada
+        //}
     }
 
     public void modificarComanda(){
-        int comandaOption = 0;
-
-        comandaView.modificarComanda(listaComandas);
-
-        comandaOption = comandaView.askModificarComanda(listaComandas);
-
-        listaComandas.getComandasList().get(comandaOption).setPreparado(comandaView.askModificarEstado(comandaOption, listaComandas));
 
     }
 
-    public void verComandas() {
-        comandaView.verComandas(listaComandas);
+    public static void verComandas() {
+
     }
 }
