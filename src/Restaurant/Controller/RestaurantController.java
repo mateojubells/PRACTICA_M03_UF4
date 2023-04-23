@@ -9,6 +9,8 @@ public class RestaurantController {
     private RestaurantView restaurantView;
     ListaMesas listaMesas = new ListaMesas(Database.cargarMesas());
 
+    Menu menu = new Menu(Database.cargarCarta(Database.cargarPrimeros(), Database.cargarSegundos(), Database.cargarPostres()), Database.cargarBebida());
+
     ListaComandas listaComandas = new ListaComandas(Database.cargarComandas());
 
     private MesaView mesaView = new MesaView();
@@ -21,7 +23,7 @@ public class RestaurantController {
     public RestaurantController (RestaurantView restaurantUI) {
         this.restaurantView = restaurantUI;
         mesaController = new MesaController(mesaView, listaMesas);
-        comandaController = new ComandaController(comandaView, listaComandas);
+        comandaController = new ComandaController(comandaView, listaComandas, menu);
     }
 
 

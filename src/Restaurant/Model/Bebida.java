@@ -3,8 +3,8 @@ package Restaurant.Model;
 public class Bebida extends Articulo{
     private double centilitros;
 
-    public Bebida(String nombre, String descripcion, float precio, double centilitros) {
-        super(nombre, descripcion, precio);
+    public Bebida(int id, String nombre, String descripcion, float precio, double centilitros) {
+        super(id, nombre, descripcion, precio);
         this.centilitros = centilitros;
     }
 

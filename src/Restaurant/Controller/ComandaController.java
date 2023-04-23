@@ -1,7 +1,10 @@
 package Restaurant.Controller;
 
 import Restaurant.Model.ListaComandas;
+import Restaurant.Model.*;
 import Restaurant.View.ComandaView;
+
+import java.util.ArrayList;
 
 public class ComandaController {
 
@@ -9,9 +12,12 @@ public class ComandaController {
 
     private ListaComandas listaComandas;
 
-    public ComandaController(ComandaView comandaView, ListaComandas listaComandas) {
+    private Menu menu;
+
+    public ComandaController(ComandaView comandaView, ListaComandas listaComandas, Menu menu) {
         this.comandaView = comandaView;
         this.listaComandas = listaComandas;
+        this.menu = menu;
     }
 
     public ComandaView getComandaView() {
@@ -56,6 +62,18 @@ public class ComandaController {
 
     public void añadirComanda() {
 
+        ArrayList<Plato> platos;
+        ArrayList<Bebida> bebidas;
+
+        comandaView.añadirComanda(listaComandas); // Muestra todas las mesas
+
+        platos = comandaView.añadirPlato(menu);
+
+        // FIXME
+        // Mesa option es -1 cuando el usuario quiere tirar atras
+        //if (mesaOption != -1 ) {
+        //    listaMesas.getMesasList().get(mesaOption).setOcupada(true); // Marcamos ocupada la mesa deseada
+        //}
     }
 
     public void modificarComanda(){
